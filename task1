@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+#include <stdio.h>
+#include <conio.h>
+using namespace std;
+
+int returningValue() {
+	return 5+8;
+}
+
+int main() {
+	FILE *sourceFile, *finalFile;
+	double a, b;
+	sourceFile = fopen("R.txt", "r");
+	if (sourceFile == NULL) {
+		printf("1111");
+		return 1;
+	}	
+	else
+		fscanf(sourceFile, "%lf", &a);
+	fclose(sourceFile);
+	for (int i = 0; pow(3, i) <= a; i++) {
+		b = i;
+	}
+	finalFile = fopen("stepen.txt", "w");
+	if (finalFile == NULL) {
+		return 2;
+	}
+	else
+	{
+		fprintf(finalFile, "%d", a);
+		fclose(finalFile);
+	}
+	getch();
+	return 0;
+}
