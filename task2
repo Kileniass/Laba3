@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	FILE* SourceFile, * FinalFile;
+	int AllWay, WayOnOneDay, QuantityDays, DistanceTraveled;
+	SourceFile = fopen("pohod.txt", "r");
+	fscanf(SourceFile, " %i ", &AllWay);
+	fscanf(SourceFile, " %i ", &WayOnOneDay);
+	fclose(SourceFile);
+	DistanceTraveled = WayOnOneDay;
+	while (AllWay > DistanceTraveled) {
+		DistanceTraveled += WayOnOneDay + WayOnOneDay * 0, 15;
+		QuantityDays++;
+		cout << DistanceTraveled << "/n";
+	}
+	FinalFile = fopen("dni.txt", "w");
+	fprintf(FinalFile, "%d", QuantityDays);
+	fclose(FinalFile);
+	cout << "QuantityDays=" << QuantityDays;
+	return 0;
+}
